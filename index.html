@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+  <title>ANDROMEDA AI — Asistente musical</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark">✦</div>
+      <div>
+        <p class="eyebrow">ASISTENTE MUSICAL PERSONAL</p>
+        <h1>ANDROMEDA <span>AI</span></h1>
+      </div>
+      <div class="status"><i></i> EN LÍNEA</div>
+    </header>
+
+    <section class="stage" aria-label="ANDROMEDA">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="spark spark-a">✦</div>
+      <div class="spark spark-b">·</div>
+      <div class="robot" id="robot" role="img" aria-label="Cabeza flotante de ANDROMEDA">
+        <div class="ear ear-left"><span></span></div>
+        <div class="ear ear-right"><span></span></div>
+        <div class="head-shell">
+          <div class="face">
+            <div class="brow brow-left"></div>
+            <div class="brow brow-right"></div>
+            <div class="eye eye-left"><span></span></div>
+            <div class="eye eye-right"><span></span></div>
+            <div class="cheek cheek-left"></div>
+            <div class="cheek cheek-right"></div>
+            <div class="mouth" id="mouth"><span></span></div>
+          </div>
+          <div class="shell-glint"></div>
+        </div>
+      </div>
+      <div class="platform"><div></div></div>
+      <div class="expression-label" id="expressionLabel">ALEGRE</div>
+    </section>
+
+    <section class="dialogue">
+      <div class="sound-icon" aria-hidden="true">♫</div>
+      <div class="dialogue-copy">
+        <p class="speaker">ANDROMEDA</p>
+        <p id="message" aria-live="polite">¡Bienvenido de nuevo al estudio, Pancho! ¿Qué cocinaremos hoy?</p>
+      </div>
+      <button class="speak-button" id="speakButton" title="Escuchar a ANDROMEDA" aria-label="Escuchar">▶</button>
+    </section>
+
+    <section class="controls">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PANEL DE EXPRESIONES</p>
+          <h2>¿Cómo se siente?</h2>
+        </div>
+        <span class="live-tag"><i></i> ANIMADA</span>
+      </div>
+      <div class="expression-grid">
+        <button class="expression active" data-expression="happy"><span>☺</span><b>Alegre</b></button>
+        <button class="expression" data-expression="laugh"><span>⌁</span><b>Riendo</b></button>
+        <button class="expression" data-expression="surprised"><span>!</span><b>Sorpresa</b></button>
+        <button class="expression" data-expression="thinking"><span>?</span><b>Pensando</b></button>
+        <button class="expression" data-expression="focused"><span>⌖</span><b>Concentrada</b></button>
+        <button class="expression" data-expression="listening"><span>◖</span><b>Escuchando</b></button>
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <button class="action primary" id="helloButton">✦ Saludar</button>
+      <button class="action" id="thinkButton">◎ Analizar una idea</button>
+      <button class="action" id="laughButton">♫ Reír conmigo</button>
+    </section>
+
+    <footer>
+      <span>ANDROMEDA AI · PROTOTIPO 0.1</span>
+      <span>Tu compañera de producción musical</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

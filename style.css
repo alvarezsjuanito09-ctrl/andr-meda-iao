@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #080d1b;
+  --panel: rgba(17, 27, 50, .78);
+  --line: rgba(92, 159, 255, .22);
+  --cyan: #68e5ff;
+  --blue: #668cff;
+  --muted: #8da2c6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: #eef6ff;
+  background: radial-gradient(ellipse at 50% 20%, #17264b 0%, #0b1328 40%, var(--bg) 78%);
+  font-family: Manrope, system-ui, sans-serif;
+}
+button { font: inherit; }
+.app { width: min(960px, 100%); margin: auto; padding: 24px clamp(16px, 4vw, 36px) 20px; }
+.topbar { display:flex; align-items:center; gap:13px; }
+.brand-mark { width:42px;height:42px;display:grid;place-items:center;border:1px solid #4d9fff;border-radius:14px;color:var(--cyan);font-size:25px;box-shadow:0 0 22px #319dff38; }
+.eyebrow { margin:0 0 4px; color:#8ca8d3; font-size:10px; font-weight:800; letter-spacing:2px; }
+h1 { margin:0; font-size:20px; letter-spacing:2px; }
+h1 span { color:var(--cyan); }
+.status { margin-left:auto; color:#9bc4d9; font-size:10px; letter-spacing:1.5px; }
+.status i,.live-tag i { display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:#5cf2bf;box-shadow:0 0 10px #5cf2bf; }
+.stage { height:390px; position:relative; display:grid; place-items:center; overflow:hidden; }
+.orbit { position:absolute; border:1px solid rgba(82,171,255,.18); border-radius:50%; transform:rotate(-15deg); }
+.orbit-one { width:370px;height:145px; }
+.orbit-two { width:460px;height:190px; transform:rotate(22deg);border-color:rgba(128,112,255,.14); }
+.robot { position:relative; width:290px;height:220px; z-index:2; animation:float 4s ease-in-out infinite; filter:drop-shadow(0 20px 28px #0008); }
+.head-shell { position:absolute;inset:8px 12px 10px;background:linear-gradient(145deg,#fff 0%,#e9f3ff 48%,#a9c5e8 100%);border-radius:46% 46% 43% 43% / 44% 44% 48% 48%;box-shadow:inset -10px -13px 20px #829fc755,inset 8px 8px 18px #fff,0 0 38px #69cfff3d; }
+.face { position:absolute;inset:29px 23px 30px;background:linear-gradient(145deg,#07101e,#101d36);border-radius:47% 47% 45% 45% / 48% 48% 50% 50%;overflow:hidden;box-shadow:inset 0 5px 18px #000b,0 0 0 2px #d8eaff; }
+.ear { position:absolute;top:75px;width:43px;height:74px;border-radius:22px;background:linear-gradient(90deg,#a6c4e8,#f8fcff,#9db9dc);z-index:-1;box-shadow:0 0 20px #61caff55; }
+.ear-left {left:0}.ear-right {right:0}
+.ear span {position:absolute;inset:17px 10px;border-radius:12px;background:#173b62;box-shadow:inset 0 0 9px #60e5ff,0 0 10px #60dfff;}
+.eye {position:absolute;top:69px;width:35px;height:42px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px #52dfff,0 0 28px #36baff;transition:all .22s ease;}
+.eye-left {left:49px}.eye-right {right:49px}
+.eye span {position:absolute;top:8px;left:9px;width:8px;height:8px;border-radius:50%;background:#fff;opacity:.85;}
+.brow {position:absolute;top:52px;width:39px;height:7px;border-radius:50%;background:#69e9ff;opacity:0;transition:.2s}
+.brow-left{left:46px}.brow-right{right:46px}
+.cheek {position:absolute;top:119px;width:20px;height:9px;border-radius:50%;background:#ff86bd;opacity:0;filter:blur(5px)}
+.cheek-left{left:30px}.cheek-right{right:30px}
+.mouth {position:absolute;left:50%;top:137px;transform:translateX(-50%);width:38px;height:12px;border-bottom:4px solid var(--cyan);border-radius:0 0 50% 50%;transition:all .22s ease;filter:drop-shadow(0 0 5px #52dfff);}
+.mouth span {display:block}
+.shell-glint {position:absolute;top:15px;left:55px;width:90px;height:18px;border-radius:50%;background:#fff;filter:blur(14px);opacity:.65;transform:rotate(-20deg)}
+.platform {position:absolute;bottom:39px;width:270px;height:36px;border:2px solid #4ccfff88;border-radius:50%;transform:perspective(150px) rotateX(55deg);box-shadow:0 0 22px #38bfff66,inset 0 0 15px #38bfff44;}
+.platform div {position:absolute;inset:8px 35px;border:1px solid #6c9bff;border-radius:50%}
+.expression-label {position:absolute;bottom:5px;color:#80dfff;font-size:10px;font-weight:800;letter-spacing:3px}
+.spark {position:absolute;color:#7ceaff;text-shadow:0 0 12px #56dfff;font-size:25px}
+.spark-a{top:65px;right:23%}.spark-b{bottom:100px;left:20%;font-size:38px}
+.dialogue {display:flex;align-items:center;gap:14px;padding:17px 18px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:0 12px 35px #0003;backdrop-filter:blur(12px);}
+.sound-icon {width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:#163b60;color:var(--cyan);font-size:22px}
+.dialogue-copy{flex:1}.speaker{margin:0 0 4px;color:var(--cyan);font-size:9px;font-weight:800;letter-spacing:2px}
+#message{margin:0;font-size:14px;line-height:1.55}
+.speak-button{width:38px;height:38px;border:1px solid #4c9fff66;border-radius:50%;background:#163b60;color:#a8eeff;cursor:pointer}
+.controls{margin-top:28px}.section-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:14px}
+h2{margin:0;font-size:19px}.live-tag{font-size:9px;color:#a6bad8;letter-spacing:1px}
+.expression-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+.expression{min-height:78px;border:1px solid var(--line);border-radius:14px;background:#101a30;color:#c9d9f2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:.2s}
+.expression span{font-size:22px;color:var(--cyan)}.expression b{font-size:10px;font-weight:600}
+.expression:hover,.expression.active{border-color:#5ccfff;background:#153252;box-shadow:0 0 18px #36bfff22}
+.quick-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.action{border:1px solid var(--line);border-radius:12px;padding:11px 15px;background:#101a30;color:#d8e7ff;font-size:12px;cursor:pointer}
+.action.primary{background:linear-gradient(100deg,#176caa,#4255b8);border-color:#5bafff;color:white}
+footer{display:flex;justify-content:space-between;gap:10px;margin-top:28px;color:#647b9f;font-size:9px;letter-spacing:1px}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-11px) rotate(1deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.robot.idle .eye{animation:blink 5s infinite}
+.robot.laugh .head-shell{animation:shake .28s 5}
+@keyframes shake{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+.robot.thinking{animation:think 2.3s ease-in-out infinite}
+@keyframes think{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(8px,-8px) rotate(5deg)}}
+.robot.speaking .mouth{animation:talk .19s infinite alternate}
+@keyframes talk{from{height:7px;width:25px;border-radius:50%}to{height:27px;width:32px;border:0;border-radius:50%;background:#ff91c6;box-shadow:0 0 12px #ff91c6}}
+/* Expresiones */
+.robot[data-expression="laugh"] .eye{height:9px;top:83px;border-radius:50%;background:transparent;border-top:5px solid var(--cyan);box-shadow:none}
+.robot[data-expression="laugh"] .mouth{height:27px;width:44px;border:0;background:#ff91c6;border-radius:8px 8px 24px 24px;box-shadow:0 0 12px #ff91c6}
+.robot[data-expression="laugh"] .cheek{opacity:.8}
+.robot[data-expression="surprised"] .eye{width:42px;height:48px;top:63px}
+.robot[data-expression="surprised"] .mouth{width:19px;height:24px;border:3px solid #68e5ff;border-radius:50%;background:transparent}
+.robot[data-expression="thinking"] .eye-left{transform:translate(-7px,-5px) scale(.85)}
+.robot[data-expression="thinking"] .eye-right{transform:translate(4px,-9px) scale(.75)}
+.robot[data-expression="thinking"] .mouth{width:26px;height:4px;border-radius:5px;transform:translateX(-20%) rotate(-8deg)}
+.robot[data-expression="thinking"] .brow-right{opacity:1;transform:rotate(-12deg)}
+.robot[data-expression="focused"] .eye{height:22px;top:79px;border-radius:4px 4px 15px 15px}
+.robot[data-expression="focused"] .brow{opacity:1;top:59px}
+.robot[data-expression="listening"] .eye{width:29px;height:37px;top:72px}
+.robot[data-expression="listening"] .mouth{width:23px;height:8px}
+@media(max-width:600px){.app{padding-top:18px}.stage{height:330px}.robot{transform:scale(.86)}.orbit-one{width:290px}.orbit-two{width:350px}.expression-grid{grid-template-columns:repeat(3,1fr)}.expression{min-height:70px}.dialogue{padding:13px}#message{font-size:12px}footer{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
